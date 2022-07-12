@@ -8,7 +8,7 @@ public class Main {
     public static int[] heroesDamage = {22, 24, 20, 0, 15, 44, 28, 30};
 
     public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Medic", "Golem", "Lucky", "Berserk", "Thor"};
-    public static int round_number = 0;
+    public static int round_number = 1;
     public static int hill = 30;
 
     public static void main(String[] args) {
@@ -99,7 +99,7 @@ public class Main {
 
 
     private static void medicHill() {
-        for (int i = 0; i < heroesHealth.length; i++) {
+        for (int i = 0; i < 1; i++) {
             Random random = new Random();
             int randomHill = random.nextInt(40);
             int randomHero = random.nextInt(2);
@@ -112,6 +112,7 @@ public class Main {
         }
 
     }
+
     public static void bossHits() {
         for (int i = 0; i < heroesHealth.length; i++) {
             if (heroesHealth[i] > 0) {
@@ -172,11 +173,12 @@ public class Main {
     }
 
     public static void printStatistics() {
-        System.out.println("ROUND " + round_number + "  _________________");
+        System.out.println("ROUND " + round_number + "  _______________________");
         System.out.println("Boss health: " + bossHealth + "; damage: " + bossDamage);
         for (int i = 0; i < heroesHealth.length; i++) {
             System.out.println(heroesAttackType[i] + " health: " + heroesHealth[i]
                     + "; damage: " + heroesDamage[i]);
+
         }
     }
 }
